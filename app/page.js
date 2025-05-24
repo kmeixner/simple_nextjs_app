@@ -4,7 +4,10 @@ function Header({ title }) {
     return <h1>{title ? title : 'Default title'}</h1>;
 }
 
-function HomePage() {
+export default function HomePage() {
+    /* Note: 'export default' above tells Next.js distinguish
+       what is the main component to render for your page  */
+
     const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
 
     const [likes, setLikes] = useState(0);
