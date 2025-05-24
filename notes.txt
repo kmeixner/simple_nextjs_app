@@ -59,4 +59,51 @@ Error:   × You're importing a component that needs `useState`. This React hook 
 This is because Next.js uses React Server Components, a new feature that allows React to render on the server.
 Server Components don't support useState, so you'll need to use a Client Component instead.
 
-(next chapter will discuss this)
+4) Fix error above:
+
+a) Create a likeButton component in a separate file:
+
+/app/like-button.js:
+
+'use client';
+ 
+import { useState } from 'react';
+ 
+export default function LikeButton() {
+  const [likes, setLikes] = useState(0);
+ 
+  function handleClick() {
+    setLikes(likes + 1);
+  }
+ 
+  return <button onClick={handleClick}>Like ({likes})</button>;
+}
+
+Notes:
+- 'use client' tells nextJS that this is a client component rather than a (default) server component
+- note that the state and event handler are now inside of this likeButton component itself
+
+b) After we move the likeButton component defining stuff (including event handler and state stuff) page.js looks like this:
+
+import LikeButton from './like-button';
+ 
+function Header({ title }) {
+  return <h1>{title ? title : 'Default title'}</h1>;
+}
+ 
+export default function HomePage() {
+  const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+ 
+  return (
+    <div>
+      <Header title="Develop. Preview. Ship." />
+      <ul>
+        {names.map((name) => (
+          <li key={name}>{name}</li>
+        ))}
+      </ul>
+      <LikeButton />
+    </div>
+  );
+}
+
