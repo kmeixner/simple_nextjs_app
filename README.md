@@ -1,0 +1,40 @@
+# simple nextjs app
+
+This repository is a simple nextjs app for me to practice and use for reference as an example.
+
+## Project Structure
+
+- node_modules/ : (do not commit) generated Node modules (eg: npm install upper-case)
+- index.html : the main app
+- initial_react_app : the sample React App that we started from before converting it to NextJS
+- package-lock.json : (should be committed) contains metadata about project and its dependencies
+- package.json : (should be committed) ensures exact versions of all dependencies installed, for reproducible builds.
+- README.md : this README file
+
+## Requirements
+
+Requires Node.js from https://nodejs.org/ to run npm (Node Package Manager)
+
+## Installing the Application
+
+1. ** clone the git repository **
+
+git clone https://github.com/kmeixner/simple_nextjs_app
+
+2. ** install dependencies (node modules) **
+
+npm install
+
+## Running the Application
+
+1. **To start app**
+
+npm run dev
+
+2. **To view app**
+
+Visit: http://localhost:3000/ in your browser.
+
+## Stopping the Application
+
+<ctrl><c> to end node/nodemon from running the app
