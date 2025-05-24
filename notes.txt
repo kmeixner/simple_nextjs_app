@@ -1,0 +1,28 @@
+1) npm install react@latest react-dom@latest next@latest
+=> package.js and package-lock.js files are generated (note these SHOULD be committed to the git repository)
+
+2) Add a "next dev" script to your package.json file:
+
+add:
+  "scripts": {
+    "dev": "next dev"
+  },
+
+=> package.json should look something like this afterwards (version may differ):
+
+{
+  "scripts": {
+    "dev": "next dev"
+  },
+  "dependencies": {
+    "next": "^14.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
+
+3) npm run dev
+
+
+
+
